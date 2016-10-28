@@ -244,3 +244,17 @@
   padding-bottom: 20px;
   list-style: none;
 }
+
+@include media-query($on-palm) {
+  .column.w8{
+    padding: initial;
+    width: 100%;
+  }
+  .column.w2{
+    padding: initial;
+    width: 100%;
+  }
+  .date-highlight {
+    display: none;
+  }
+}

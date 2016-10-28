@@ -7,9 +7,34 @@
     {% include header.html %}
 
     <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+      {% if page.show_tag %}
+        <div class="wrapper">
+          <div class="column w2">
+            <div class="date-highlight">❖</div>
+            <ul class="entry-meta">
+              {% assign tobi = "" %}
+              {% for post in site.posts %}
+              {% for tag in post.tags %}
+                {% assign tobi=tobi | append: tag %}
+                {% assign tobi=tobi | append: "," %}
+              {% endfor %}
+              {% endfor %}
+
+              {{ tobi | tag_times }}
+
+            </ul>
+        </div>
+        <div class="column w8">
+          {{ content }}
+        </div>
       </div>
+      {% else %}
+        <div class="wrapper max8">
+          <div>
+            {{ content }}
+          </div>
+        </div>
+      {% endif %}
     </div>
 
     {% include footer.html %}
