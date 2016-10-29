@@ -27,33 +27,6 @@ Mod.constants          #=> [:CONST, :PI, :E]
 Mod.instance_methods   #=> [:meth]
 {% endhighlight %}
 
-{% highlight html %}
-<p>This is very heavily
-  <strong>emphasized</strong>
-  <strong>text</strong>.
-</p>
-{% endhighlight %}
-
-{% highlight css %}
-.site-title {
-    font-size: 26px;
-    font-weight: 300;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
-}
-{% endhighlight %}
-
-{% highlight python %}
-def hello:
-  if (fd==0):
-    print "dasds"
-{% endhighlight %}
-
-
-*****
-
       constants → array
       constants(inherited) → array
 

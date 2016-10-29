@@ -13,8 +13,8 @@ comments: true
 ## What if i'm using rails as api, so my frontend is seperated from rails can i still prevent csrf and how?
 
 So lets take an example where we use ember for frontend and rails as api.
-In this case apart from adding protect_from_forgery in application controller you have to do additional three things.
-One you have to add following code in application controller:
+In this case, apart from adding `protect_from_forgery in application controller` you have to do additional **three things**.    
+**One** you have to add the following code in application controller:
 <!--more-->
 {% highlight ruby %}
 after_action :set_csrf_token
@@ -28,12 +28,12 @@ after_action :set_csrf_token
   end
 {% endhighlight %}
 
-Here we are sending newly generated form_authenticity_token in response of xhr request(ajax- XMLHttpRequest)
-"request.xhr?" is to ensure that it is ajax request, we will not want to send token to any other request right.
-<br>Two you have to set this new token in meta tag by extracting it from response.
-<br>Third you will send csrf token in request header by extracting it from meta tag.
-you can achieve two and three by adding following code in app.js of ember
-{% highlight ruby %}
+Here we are sending the newly generated `form_authenticity_token` in the response of xhr request(ajax- XMLHttpRequest)     
+`request.xhr?` is to ensure that it is ajax request, we would not want to send the token to any other request right.
+<br>**Two** you have to set this new token in meta tag by extracting it from the response.
+<br>**Third** you will send csrf token in the request header by extracting it from the meta tag.     
+you can achieve two and three by adding following code in `app.js` of ember
+{% highlight js %}
 $ ->
   $.ajaxPrefilter (options, originalOptions, xhr) ->
     token = $('meta[name="csrf-token"]').attr('content')
@@ -46,8 +46,8 @@ $ ->
 {% endhighlight %}
 
 <br>
-<b>
-Why change csrf token in header on every post request and not only when session changes?
-</b>
+
+## Why change csrf token in header on every post request and not only when session changes?
+
 If it were to change token only when session changes there would be an extra overhead to trigger session change and then generate csrf token and set in header.
-It is a lot easier to randomally generate csrf token using session[:_csrf_token] on every post request.
+It is a lot easier to randomally generate csrf token using `session[:_csrf_token]` on every post request.
