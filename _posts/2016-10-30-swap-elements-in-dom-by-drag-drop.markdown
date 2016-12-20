@@ -13,6 +13,10 @@ comments: true
 ---
 
 
+Drag and drop is a very common feature. In which you drag an element and drop it somewhere else.
+Drag and drop is a standard feature in HTML5, You can make any element draggable.
+Below are the steps on how to achieve the same.
+<!--more-->
 #### Below is a demo of the same (drag div1 to div2).
 <div class="drag-demo">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -45,7 +49,6 @@ comments: true
 <div id="div1" draggable=true>Div 1</div>
 <div id="div2" draggable=true>Div 2</div>
 {% endhighlight %}
-<!--more-->
 ## Second step: Save the id of dragged element
 {% highlight js %}
 function drag(event)
