@@ -430,5 +430,12 @@ ul.entry-meta {
     }
 }
 .wrapper.max8{
+  max-width: calc(900px - (40px * 2));
+  @include media-query(1200px){
+    max-width: calc(800px - (40px * 2));
+  }
+}
+
+.wrapper.max8 > div:first-child{
   max-width: calc(800px - (40px * 2));
 }

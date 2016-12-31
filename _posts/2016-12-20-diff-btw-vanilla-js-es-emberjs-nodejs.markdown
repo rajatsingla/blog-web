@@ -6,10 +6,11 @@ date:   2016-12-20 12:41:55 +0530
 categories: javascript
 tags:
 - js
+navs: true
 comments: true
 ---
 
-## Vanilla.js 
+## Vanilla.js
 [Vanilla.js](http://vanilla-js.com/){:target="_blank"} is nothing but a name given to the **practice of using plain JavaScript**
 without any additional JavaScript libraries as a mockery to remind
 framework lovers that many things can be done without the need for additional JavaScript

@@ -5,8 +5,7 @@
   <body>
 
     {% include header.html %}
-
-    <div class="page-content">
+    <div class="page-content" id="top">
       {% if page.show_tag %}
         <div class="wrapper">
           <div class="column w2">
@@ -29,6 +28,27 @@
         </div>
       </div>
       {% else %}
+        {% if page.navs %}
+          {{ page.content | build_navs }}
+            <script>
+              document.body.onscroll=fix_nav
+              function css(el, styles) {
+                  for (var property in styles)
+                      el.style[property] = styles[property];
+              }
+              function fix_nav() {
+                var top=document.body.scrollTop;
+                var el=document.getElementById('nav');
+                if(el){
+                  if(top>64){
+                    css(el, { position:'fixed',top:'40px',opacity:.4 });
+                  } else {
+                    css(el, { position:'absolute',top:'105px',opacity:1 });
+                  }
+                }
+              }
+          </script>
+        {% endif %}
         <div class="wrapper max8">
           <div>
             {{ content }}

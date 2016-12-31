@@ -7,6 +7,7 @@ categories: rails
 tags:
 - rails
 - assets
+navs: true
 comments: true
 ---
 

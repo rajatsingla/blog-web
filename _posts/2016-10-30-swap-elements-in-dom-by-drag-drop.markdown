@@ -9,6 +9,7 @@ tags:
 - js
 - html
 - dom
+navs: true
 comments: true
 ---
 

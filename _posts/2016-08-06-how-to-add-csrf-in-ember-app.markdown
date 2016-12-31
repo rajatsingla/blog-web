@@ -7,6 +7,7 @@ categories: ruby
 tags:
 - ruby
 - csrf
+navs: true
 comments: true
 ---
 
