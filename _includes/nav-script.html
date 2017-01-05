@@ -1,5 +1,6 @@
 <script>
   document.body.onscroll=window_scroll
+  window.onload=window_load
   function css(el, styles) {
       for (var property in styles)
           el.style[property] = styles[property];
@@ -9,6 +10,17 @@
     // setTimeout(highlight_nav, 0);
     highlight_nav()
   };
+  function window_load(){
+    add_up_arrow()
+  };
+  function add_up_arrow(){
+    var all_h3=document.getElementsByTagName('hr')
+    if (window.innerWidth<640 && screen.width<640){
+      for (var i = 0; i < all_h3.length; i++) {
+          all_h3[i].outerHTML='<span class="top-arrow"><a href="#top" title="To top"></a></span><hr></hr>'
+      }
+    }
+  }
   function fix_nav() {
     var top=document.body.scrollTop;
     var el=document.getElementById('nav');
