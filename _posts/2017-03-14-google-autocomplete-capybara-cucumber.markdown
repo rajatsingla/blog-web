@@ -35,8 +35,8 @@ module name
     if ele
       ele.set "delhi"
       sleep 1
-      ele.native.send_keys(:keydown)
-      ele.native.send_keys(:enter)
+      ele.native.send_keys(:arrow_down)
+      ele.native.send_keys(:return)
     end
     sleep 1
   end
